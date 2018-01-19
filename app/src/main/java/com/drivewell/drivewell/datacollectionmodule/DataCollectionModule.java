@@ -47,7 +47,7 @@ public class DataCollectionModule extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_data_collection_module);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         final DatabaseReference mAccelerometer=database.getReference("Accelerometer");
