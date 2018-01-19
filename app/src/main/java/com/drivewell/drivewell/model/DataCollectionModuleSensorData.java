@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.data;
+package com.drivewell.drivewell.model;
 
 public class DataCollectionModuleSensorData {
     

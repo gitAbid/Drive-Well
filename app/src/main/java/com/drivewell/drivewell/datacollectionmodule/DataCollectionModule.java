@@ -10,7 +10,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.drivewell.drivewell.R;
-import com.drivewell.drivewell.data.DataCollectionModuleSensorData;
+import com.drivewell.drivewell.model.DataCollectionModuleSensorData;
 import com.getwandup.rxsensor.RxSensor;
 import com.getwandup.rxsensor.domain.RxSensorEvent;
 import com.github.mikephil.charting.charts.LineChart;
