@@ -38,7 +38,16 @@ public class AdapterRankingLeaderBoard extends RecyclerView.Adapter<AdapterRanki
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.mFirstName.setText(driversList.get(position).getFirstname());
-        holder.mPoints.setText(String.valueOf(driversList.get(position).getPoints()));
+        holder.mPoints.setText(String.valueOf(driversList.get(position).getPoints()+" points"));
+        if (position==0){
+            holder.mRanking.setText("1st");
+        }else if (position==1){
+            holder.mRanking.setText("2nd");
+        }else if (position==2){
+            holder.mRanking.setText("3rd");
+        }else {
+            holder.mRanking.setText((position+1)+"th");
+        }
     }
 
     @Override
@@ -47,11 +56,12 @@ public class AdapterRankingLeaderBoard extends RecyclerView.Adapter<AdapterRanki
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView mFirstName,mPoints;
+        private TextView mFirstName,mPoints,mRanking;
         public ViewHolder(View itemView) {
             super(itemView);
             mFirstName=itemView.findViewById(R.id.tvLeaderboardMemberName);
             mPoints=itemView.findViewById(R.id.tvLeaderboardMemberPoints);
+            mRanking=itemView.findViewById(R.id.tvLeaderboardMemberPosition);
 
         }
     }
