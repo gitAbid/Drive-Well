@@ -10,7 +10,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.drivewell.drivewell.R;
-import com.drivewell.drivewell.model.DataCollectionModuleSensorData;
+import com.drivewell.drivewell.model.SensorDataModel;
 import com.getwandup.rxsensor.RxSensor;
 import com.getwandup.rxsensor.domain.RxSensorEvent;
 import com.github.mikephil.charting.charts.LineChart;
@@ -335,7 +335,7 @@ public class DataCollectionModule extends AppCompatActivity {
 
                         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
                         if (uploadEnable){
-                            mAccelerometer.child(currentDateTimeString).setValue(new DataCollectionModuleSensorData(rxSensorEvent.values[0],
+                            mAccelerometer.child(currentDateTimeString).setValue(new SensorDataModel(rxSensorEvent.values[0],
                                     rxSensorEvent.values[1],
                                     rxSensorEvent.values[2]));
                         }
@@ -391,7 +391,7 @@ public class DataCollectionModule extends AppCompatActivity {
                     public void onNext(RxSensorEvent rxSensorEvent) {
                         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
                         if (uploadEnable){
-                            mGyroscope.child(currentDateTimeString).setValue(new DataCollectionModuleSensorData(rxSensorEvent.values[0],
+                            mGyroscope.child(currentDateTimeString).setValue(new SensorDataModel(rxSensorEvent.values[0],
                                     rxSensorEvent.values[1],
                                     rxSensorEvent.values[2]));
                         }
@@ -447,7 +447,7 @@ public class DataCollectionModule extends AppCompatActivity {
                     public void onNext(RxSensorEvent rxSensorEvent) {
                         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
                         if (uploadEnable){
-                            mGravity.child(currentDateTimeString).setValue(new DataCollectionModuleSensorData(rxSensorEvent.values[0],
+                            mGravity.child(currentDateTimeString).setValue(new SensorDataModel(rxSensorEvent.values[0],
                                     rxSensorEvent.values[1],
                                     rxSensorEvent.values[2]));
                         }
@@ -503,7 +503,7 @@ public class DataCollectionModule extends AppCompatActivity {
                     public void onNext(RxSensorEvent rxSensorEvent) {
                         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
                         if (uploadEnable){
-                            mLinearAccelerometer.child(currentDateTimeString).setValue(new DataCollectionModuleSensorData(rxSensorEvent.values[0],
+                            mLinearAccelerometer.child(currentDateTimeString).setValue(new SensorDataModel(rxSensorEvent.values[0],
                                     rxSensorEvent.values[1],
                                     rxSensorEvent.values[2]));
                         }
@@ -556,7 +556,7 @@ public class DataCollectionModule extends AppCompatActivity {
                     public void onNext(RxSensorEvent rxSensorEvent) {
                         String currentDateTimeString = DateFormat.getDateTimeInstance().format(new Date());
                         if (uploadEnable){
-                            mRotationVector.child(currentDateTimeString).setValue(new DataCollectionModuleSensorData(rxSensorEvent.values[0],
+                            mRotationVector.child(currentDateTimeString).setValue(new SensorDataModel(rxSensorEvent.values[0],
                                     rxSensorEvent.values[1],
                                     rxSensorEvent.values[2]));
                         }

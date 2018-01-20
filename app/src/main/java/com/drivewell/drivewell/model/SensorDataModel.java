@@ -1,12 +1,12 @@
 package com.drivewell.drivewell.model;
 
-public class DataCollectionModuleSensorData {
+public class SensorDataModel {
     
     private float X;
     private float Y;
     private float Z;
 
-    public DataCollectionModuleSensorData(float x, float y, float z) {
+    public SensorDataModel(float x, float y, float z) {
         X = x;
         Y = y;
         Z = z;
