@@ -5,22 +5,19 @@ import android.app.Fragment;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.adapter.AdapterRankingLeaderBoard;
-import com.drivewell.drivewell.constants.BaseActivity;
+import com.drivewell.drivewell.constants.Ranking;
 import com.drivewell.drivewell.model.DriverModel;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
@@ -113,7 +110,7 @@ public class DriverRankingFragment extends Fragment {
                     }
                 });
             }
-        }, 0, 5000);
+        }, 0, Ranking.LEADERBOARD_REFRESH_TIME_INTERVAL);
 
         return mView;
     }
