@@ -9,6 +9,7 @@ import java.lang.reflect.Array;
 import java.sql.Driver;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -23,14 +24,14 @@ public class DriverRankingPresenter implements IDriverRankingPresenter {
     List<DriverModel> driverList;
 
     public DriverRankingPresenter() {
-        driverList=new ArrayList<>();
-        getDataFromRepository();
+
+
     }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public List<DriverModel> getUpdatedRanking() {
-
+        getDataFromRepository();
         Collections.sort(driverList, DriverModel.driverModelComparator);
         return driverList;
     }
@@ -38,10 +39,10 @@ public class DriverRankingPresenter implements IDriverRankingPresenter {
     private void getDataFromRepository(){
         //TODO getting data from repository to be implemented
         //Demo purpose
-
+        driverList=new ArrayList<>();
         for (int i = 0; i <10 ; i++) {
             Random ran = new Random();
-            int x = ran.nextInt(6) + 50;
+            int x = (int) (ran.nextInt(10) + 625*Math.random());
             driverList.add(new DriverModel("FirstName"+i,"LastName"+i,x));
         }
     }
