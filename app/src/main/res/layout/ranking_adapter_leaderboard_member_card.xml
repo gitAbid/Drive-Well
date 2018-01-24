@@ -20,8 +20,7 @@
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:animateLayoutChanges="true"
-            app:cardElevation="5dp">
+            android:animateLayoutChanges="true">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -587,4 +586,6 @@
 
   -->
     </LinearLayout>
+
+
 </FrameLayout>
