@@ -1,24 +1,15 @@
 package com.drivewell.drivewell.ui.roadcondition;
 
-
-import android.Manifest;
 import android.app.Fragment;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.drivewell.drivewell.R;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
+
 
 public class RoadConditionMapFragment extends Fragment{
     private static final String ARG_PARAM1 = "param1";
@@ -63,8 +54,6 @@ public class RoadConditionMapFragment extends Fragment{
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_road_condition_map, container, false);
-
-
         return view;
     }
 
