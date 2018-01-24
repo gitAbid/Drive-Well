@@ -8,6 +8,7 @@ import android.os.Bundle;
 import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.ui.profile.ProfileFragment;
 import com.drivewell.drivewell.ui.ranking.DriverRankingFragment;
+import com.drivewell.drivewell.ui.roadcondition.RoadConditionMapFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,10 +17,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ProfileFragment profileFragment=new ProfileFragment();
+        RoadConditionMapFragment roadConditionMapFragment=new RoadConditionMapFragment();
         FragmentManager fragmentManager=getFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.flContainer,profileFragment,profileFragment.toString());
+        fragmentTransaction.replace(R.id.flContainer,roadConditionMapFragment,roadConditionMapFragment.toString());
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
     }
