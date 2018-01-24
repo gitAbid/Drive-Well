@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:animateLayoutChanges="true"
     android:background="#FFFFFF">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,10 +17,10 @@
             android:id="@+id/cvRankingCard"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginBottom="5dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
             android:animateLayoutChanges="true">
 
             <LinearLayout
@@ -44,12 +45,13 @@
                     android:layout_weight="1">
 
                     <TextView
+
                         android:id="@+id/tvLeaderboardMemberName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:layout_marginTop="16dp"
-                        android:fontFamily="serif-monospace"
+                        android:fontFamily="@font/roboto_thin"
                         android:text="Emma Watson"
                         android:textSize="20dp" />
 
@@ -64,7 +66,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="serif-monospace"
+                            android:fontFamily="@font/roboto_thin"
                             android:gravity="left"
                             android:paddingBottom="0dp"
                             android:paddingTop="10dp"
@@ -84,7 +86,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:fontFamily="serif-monospace"
+                            android:fontFamily="@font/roboto_thin"
                             android:gravity="right"
                             android:paddingBottom="10dp"
                             android:paddingTop="10dp"
@@ -107,17 +109,17 @@
                     app:civ_border_width="2dp" />
 
             </LinearLayout>
+
             <android.support.v7.widget.CardView
                 android:id="@+id/cvStatusDot"
-                android:layout_marginBottom="12dp"
-                android:layout_marginLeft="65dp"
                 android:layout_width="17dp"
                 android:layout_height="17dp"
                 android:layout_gravity="left|bottom"
+                android:layout_marginBottom="12dp"
+                android:layout_marginLeft="65dp"
+                android:background="@color/colorStatusGreen"
                 app:cardBackgroundColor="@color/colorStatusRed"
-                app:cardCornerRadius="10dp"
-                android:background="@color/colorStatusGreen">
-            </android.support.v7.widget.CardView>
+                app:cardCornerRadius="10dp"></android.support.v7.widget.CardView>
 
         </android.support.v7.widget.CardView>
 
@@ -125,10 +127,9 @@
             android:id="@+id/cvRankingCardInfo"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
             android:layout_marginBottom="5dp"
-            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
             android:animateLayoutChanges="true"
             android:visibility="gone"
             app:cardCornerRadius="5dp"
@@ -149,6 +150,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
                         android:gravity="center"
                         android:text="Demo" />
 
@@ -156,6 +158,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
                         android:gravity="center"
                         android:text="Demo" />
                 </LinearLayout>
@@ -170,6 +173,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
                         android:gravity="center"
                         android:text="Demo" />
 
@@ -177,6 +181,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
                         android:gravity="center"
                         android:text="Demo" />
                 </LinearLayout>
@@ -192,15 +197,17 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
                         android:gravity="center"
                         android:text="More"
-                        android:textColor="@color/colorPrimary" />
+                        android:textColor="@color/colorStatusGreen" />
 
                     <Button
                         style="@style/Widget.AppCompat.Button.Borderless"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
                         android:gravity="center"
                         android:text="Call"
                         android:textColor="@color/colorAccent" />
