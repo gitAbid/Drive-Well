@@ -2,6 +2,8 @@ package com.drivewell.drivewell.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.SpannableString;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +13,8 @@ import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.model.DriverModel;
 
 import java.util.List;
+
+import cn.nekocode.badge.BadgeDrawable;
 
 /**
  * Created by abid on 1/19/18.
@@ -39,6 +43,27 @@ public class AdapterRankingLeaderBoard extends RecyclerView.Adapter<AdapterRanki
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.mFirstName.setText(driversList.get(position).getFirstname());
         holder.mPoints.setText(String.valueOf(driversList.get(position).getPoints()+" points"));
+    /*    final BadgeDrawable drawable =
+                new BadgeDrawable.Builder()
+                        .type(BadgeDrawable.TYPE_NUMBER)
+                        .number(9)
+                        .build();
+
+        final BadgeDrawable drawable2 =
+                new BadgeDrawable.Builder()
+                        .type(BadgeDrawable.TYPE_ONLY_ONE_TEXT)
+                        .badgeColor(0xff336699)
+                        .text1("VIP")
+                        .build();
+
+        SpannableString spannableString =
+                new SpannableString(TextUtils.concat(
+                        "TextView ",
+                        drawable.toSpannable(),
+                        " ",
+                        drawable2.toSpannable(),
+                        " "
+                ));*/
         if (position==0){
             holder.mRanking.setText("1st");
         }else if (position==1){
