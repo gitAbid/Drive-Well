@@ -64,7 +64,6 @@ public class DriverRankingFragment extends Fragment {
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -80,25 +79,12 @@ public class DriverRankingFragment extends Fragment {
         mLeaderBoardRecyclerView.setLayoutManager(new LinearLayoutManager(context));
         mLeaderBoardRecyclerView.setAdapter(mAdapterRankingLeaderBoard);
 
+        iDriverRankingPresenter.initialize(mLeaderBoardRecyclerView,getActivity(),context);
 
-         //milliseconds
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                driverList=new ArrayList<>();
-                driverList=iDriverRankingPresenter.getUpdatedRanking();
-               try {
-                   getActivity().runOnUiThread(new Runnable() {
-                       @Override
-                       public void run() {
-                           mLeaderBoardRecyclerView.setAdapter(new AdapterRankingLeaderBoard(context,driverList));
-                       }
-                   });
-               }catch (Exception e){
+        //subscribe to the updater
+        iDriverRankingPresenter.subscribeRankingUpdater();
 
-               }
-            }
-        }, 0, Ranking.LEADERBOARD_REFRESH_TIME_INTERVAL);
+
 
         return mView;
     }
