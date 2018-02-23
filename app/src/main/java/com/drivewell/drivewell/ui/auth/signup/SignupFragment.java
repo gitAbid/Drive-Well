@@ -7,6 +7,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +19,7 @@ public class SignupFragment extends Fragment {
 
 
     private static SignupFragment instance;
-    private FloatingActionButton mLoginBack;
+    private CardView mLoginBack;
     public SignupFragment() {
         // Required empty public constructor
     }

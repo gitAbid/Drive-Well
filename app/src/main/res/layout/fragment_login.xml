@@ -125,6 +125,7 @@
         android:layout_width="70dp"
         android:layout_height="70dp">
         <ProgressBar
+            android:padding="10dp"
             android:id="@+id/pbLoginProgress"
             android:visibility="invisible"
             android:layout_width="match_parent"
