@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.drivewell.drivewell.R;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 
 /**
  * A simple {@link Fragment} subclass.

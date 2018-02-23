@@ -1,16 +1,19 @@
-package com.drivewell.drivewell.ui.auth.login;
+package com.drivewell.drivewell.ui;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.util.Log;
 
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.ui.auth.login.LoginFragment;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -24,26 +27,21 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-/**
- * Created by abid on 2/23/18.
- */
-
-public class LoginPresenter implements ILoginPresenter {
-    private Activity activity;
-
+public class LoginActivity extends AppCompatActivity {
     @Override
-    public void init(Activity activity) {
-        this.activity=activity;
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+        loadFragment(new LoginFragment());
     }
 
-    @Override
-    public void signIn(String email, String password) {
-
+    private void loadFragment(Fragment fragment) {
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.main_layout,fragment,fragment.toString())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .commit();
     }
 
-    @Override
-    public void signOut() {
 
-    }
 }
-
