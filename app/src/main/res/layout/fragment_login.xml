@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
             <TextView
-                android:id="@+id/btLoginSignUp"
+                android:id="@+id/tvLoginSignUp"
                 android:textColor="@color/colorAccent"
                 android:layout_gravity="center"
                 android:textSize="20dp"

@@ -5,4 +5,5 @@ package com.drivewell.drivewell.ui.auth.signup;
  */
 
 public interface ISignupPresenter {
+    void signUp();
 }

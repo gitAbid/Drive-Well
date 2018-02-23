@@ -8,9 +8,11 @@
     tools:context="com.drivewell.drivewell.ui.LoginActivity">
 
        <FrameLayout
+           android:animateLayoutChanges="true"
            android:layout_centerHorizontal="true"
            android:layout_centerInParent="true"
-           android:layout_margin="@dimen/margin"
+           android:layout_marginLeft="@dimen/margin"
+           android:layout_marginRight="@dimen/margin"
            android:id="@+id/main_layout"
            android:layout_width="match_parent"
            android:layout_height="wrap_content">
