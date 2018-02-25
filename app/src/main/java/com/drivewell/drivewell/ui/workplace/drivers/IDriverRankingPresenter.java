@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.ui.ranking;
+package com.drivewell.drivewell.ui.workplace.drivers;
 
 import android.app.Activity;
 import android.content.Context;

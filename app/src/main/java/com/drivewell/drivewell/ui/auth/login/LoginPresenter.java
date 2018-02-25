@@ -1,6 +1,7 @@
 package com.drivewell.drivewell.ui.auth.login;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.ui.MainActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -46,6 +48,7 @@ public class LoginPresenter implements ILoginPresenter {
                 .addOnSuccessListener(activity, new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
+                        mLoginProgressbar.setVisibility(View.INVISIBLE);
 
                     }
                 }).addOnFailureListener(activity,new OnFailureListener() {
@@ -57,8 +60,8 @@ public class LoginPresenter implements ILoginPresenter {
                     @Override
                     public void run() {
                         mLoginProgressbar.setVisibility(View.INVISIBLE);
-                        mLoginProgressbar.setVisibility(View.INVISIBLE);
                         mLoginButton.setVisibility(View.VISIBLE);
+                        activity.startActivities(new Intent[] {new Intent(activity.getApplicationContext(), MainActivity.class)});
                     }
                 }, 1000);
 

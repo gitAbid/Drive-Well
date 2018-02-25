@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.ui.ranking;
+package com.drivewell.drivewell.ui.workplace.drivers;
 
 import android.app.Activity;
 import android.content.Context;
@@ -10,13 +10,8 @@ import com.drivewell.drivewell.adapter.AdapterRankingLeaderBoard;
 import com.drivewell.drivewell.constants.Ranking;
 import com.drivewell.drivewell.model.DriverModel;
 
-import java.lang.reflect.Array;
-import java.sql.Driver;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;

@@ -1,8 +1,7 @@
 package com.drivewell.drivewell.ui;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -13,14 +12,31 @@ import com.drivewell.drivewell.database.firestore.Firestore;
 import com.drivewell.drivewell.repository.IDataProvider;
 import com.drivewell.drivewell.repository.MapConditionDataProvider;
 import com.drivewell.drivewell.ui.profile.ProfileFragment;
-import com.drivewell.drivewell.ui.ranking.DriverRankingFragment;
+import com.drivewell.drivewell.ui.workplace.WorkPlaceFragment;
+import com.drivewell.drivewell.ui.workplace.drivers.DriverRankingFragment;
 import com.drivewell.drivewell.ui.roadcondition.RoadConditionMapFragment;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
+
+
+       /*
+       *
+       *     <!--DEPRECATED-->
+
+       *     <!--DEPRECATED-->
+
+       *     <!--DEPRECATED-->
+
+       *     <!--DEPRECATED-->
+       *
+       *     <!--DEPRECATED-->
+
+       * */
+
+
 
     private Button mProfile,mMap,mRanking;
 
@@ -46,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         mRanking.setOnClickListener(e->{
-            loadFragment(new DriverRankingFragment());
+            loadFragment(new WorkPlaceFragment());
         });
 
 
@@ -77,8 +93,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadFragment(Fragment fragment) {
-        FragmentManager fragmentManager=getFragmentManager();
-        FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
+        android.support.v4.app.FragmentManager fragmentManager=getSupportFragmentManager();
+        android.support.v4.app.FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.flContainer,fragment,fragment.toString());
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();

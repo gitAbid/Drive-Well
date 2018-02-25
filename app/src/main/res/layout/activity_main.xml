@@ -7,12 +7,28 @@
     android:orientation="vertical"
     tools:context="com.drivewell.drivewell.ui.MainActivity">
 
-    <FrameLayout
-        android:id="@+id/flContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"></FrameLayout>
 
+
+    <!--DEPRECATED-->
+    <!--DEPRECATED-->
+
+    <!--DEPRECATED-->
+
+    <!--DEPRECATED-->
+
+    <!--DEPRECATED-->
+    <!--DEPRECATED-->
+
+
+
+
+
+    <!-- <FrameLayout
+         android:id="@+id/Container"
+         android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:layout_weight="1"></FrameLayout>
+ -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
