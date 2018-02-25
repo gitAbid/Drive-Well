@@ -5,9 +5,9 @@
     tools:context="com.drivewell.drivewell.ui.roadcondition.RoadConditionMapFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <com.google.android.gms.maps.MapView
+        android:id="@+id/mvRoadConditionMapView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
+        android:layout_height="match_parent">
+    </com.google.android.gms.maps.MapView>
 </FrameLayout>

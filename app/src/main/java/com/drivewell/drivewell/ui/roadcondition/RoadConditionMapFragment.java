@@ -2,20 +2,21 @@ package com.drivewell.drivewell.ui.roadcondition;
 
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.drivewell.drivewell.R;
+import com.google.android.gms.maps.MapView;
+
 
 public class RoadConditionMapFragment extends Fragment {
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    private static RoadConditionMapFragment instance;
+    private IRoadConditionMapPresenter iRoadConditionMapPresenter;
 
 
     public RoadConditionMapFragment() {
@@ -23,29 +24,36 @@ public class RoadConditionMapFragment extends Fragment {
     }
 
 
-    public static RoadConditionMapFragment newInstance(String param1, String param2) {
+    public static RoadConditionMapFragment newInstance() {
         RoadConditionMapFragment fragment = new RoadConditionMapFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
+    }
+    public static Fragment getInstance() {
+        return instance=(instance==null)?newInstance():instance;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        iRoadConditionMapPresenter=new RoadConditionMapPresenter();
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_road_condition_map, container, false);
+        View view = inflater.inflate(R.layout.fragment_road_condition_map, container, false);
+        return view;
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        //setting up map instance
+        MapView mRoadConditionMap = view.findViewById(R.id.mvRoadConditionMapView);
+        iRoadConditionMapPresenter.initializeMap(mRoadConditionMap,getActivity().getApplicationContext());
+
+    }
 }

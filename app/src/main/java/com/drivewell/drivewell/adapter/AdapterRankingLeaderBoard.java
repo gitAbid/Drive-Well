@@ -1,6 +1,7 @@
 package com.drivewell.drivewell.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.SpannableString;
 import android.text.TextUtils;
@@ -23,6 +24,7 @@ import cn.nekocode.badge.BadgeDrawable;
 public class AdapterRankingLeaderBoard extends RecyclerView.Adapter<AdapterRankingLeaderBoard.ViewHolder> {
     private Context context;
     private List<DriverModel> driversList;
+    boolean cardStatus=true;
 
     public AdapterRankingLeaderBoard(Context context, List<DriverModel> driversList) {
         this.context = context;
@@ -73,7 +75,19 @@ public class AdapterRankingLeaderBoard extends RecyclerView.Adapter<AdapterRanki
         }else {
             holder.mRanking.setText((position+1)+"th");
         }
+
+
+        holder.mRankCard.setOnClickListener(e->{
+           if (cardStatus==false){
+               holder.mQuickInfoCard.setVisibility(View.VISIBLE);
+               cardStatus=true;
+           }else {
+               cardStatus=false;
+               holder.mQuickInfoCard.setVisibility(View.GONE);
+           }
+        });
     }
+
 
     @Override
     public int getItemCount() {
@@ -82,11 +96,14 @@ public class AdapterRankingLeaderBoard extends RecyclerView.Adapter<AdapterRanki
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private TextView mFirstName,mPoints,mRanking;
+        private CardView mQuickInfoCard,mRankCard;
         public ViewHolder(View itemView) {
             super(itemView);
             mFirstName=itemView.findViewById(R.id.tvLeaderboardMemberName);
             mPoints=itemView.findViewById(R.id.tvLeaderboardMemberPoints);
             mRanking=itemView.findViewById(R.id.tvLeaderboardMemberPosition);
+            mQuickInfoCard=itemView.findViewById(R.id.cvRankingCardInfo);
+            mRankCard=itemView.findViewById(R.id.cvRankingCard);
 
         }
     }
