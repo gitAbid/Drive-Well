@@ -54,6 +54,10 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
     @NotEmpty
     private TextInputEditText mContactNo;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+    @NotEmpty
+>>>>>>> driverRankingFeature
 =======
     @NotEmpty
 >>>>>>> driverRankingFeature
