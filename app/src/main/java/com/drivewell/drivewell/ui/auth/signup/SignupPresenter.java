@@ -25,60 +25,39 @@ public class SignupPresenter implements ISignupPresenter {
     private CardView mLoginBack;
     private FloatingActionButton mSignup;
 
-    private TextInputEditText mEmail,mPassword,mConfirmPassword,mName,mAge,mHomeAddress,mContactNo;
+    private TextInputEditText mEmail, mPassword, mConfirmPassword, mName, mAge, mHomeAddress, mContactNo;
     private Spinner mUserType;
 
     private Activity activity;
     FirebaseAuth mAuth;
 
     public SignupPresenter() {
-        mAuth=FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();
     }
 
     @Override
     public void signUp(User user) {
-        boolean valid=validateUser(user);
-        if (valid){
-            mAuth.createUserWithEmailAndPassword(user.getEmail(),user.getPassword())
-                    .addOnSuccessListener(activity, new OnSuccessListener<AuthResult>() {
-                        @Override
-                        public void onSuccess(AuthResult authResult) {
 
-                            activity.startActivities(new Intent[] {new Intent(activity.getApplicationContext(), LandingActivity.class)});
+        mAuth.createUserWithEmailAndPassword(user.getEmail(), user.getPassword())
+                .addOnSuccessListener(activity, new OnSuccessListener<AuthResult>() {
+                    @Override
+                    public void onSuccess(AuthResult authResult) {
 
-                        }
-                    }).addOnFailureListener(activity,new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
+                        activity.startActivities(new Intent[]{new Intent(activity.getApplicationContext(), LandingActivity.class)});
 
-                }
-            });
-        }
+                    }
+                }).addOnFailureListener(activity, new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
     }
 
-    private boolean validateUser(User user) {
-        return true;
-    }
-
-    @Override
-    public void init(Activity activity, CardView mLoginBack, FloatingActionButton mSignup, TextInputEditText mEmail, TextInputEditText mPassword, TextInputEditText mConfirmPassword, Spinner mUserType, TextInputEditText mName, TextInputEditText mAge, TextInputEditText mHomeAddress, TextInputEditText mContactNo) {
-        this.mLoginBack=mLoginBack;
-        this.mSignup=mSignup;
-        this.mEmail=mEmail;
-        this.mPassword=mPassword;
-        this.mConfirmPassword=mConfirmPassword;
-        this.mContactNo=mContactNo;
-        this.mHomeAddress=mHomeAddress;
-        this.mAge=mAge;
-        this.mName=mName;
-        this.mUserType=mUserType;
-        this.activity=activity;
-    }
 
     public static SignupPresenter getInstance() {
-        return (instance==null)?new SignupPresenter():instance;
+        return (instance == null) ? new SignupPresenter() : instance;
     }
-
 
 
 }

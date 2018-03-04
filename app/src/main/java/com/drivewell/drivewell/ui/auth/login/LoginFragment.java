@@ -11,19 +11,31 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.ui.auth.signup.SignupFragment;
+import com.mobsandgeeks.saripaar.ValidationError;
+import com.mobsandgeeks.saripaar.Validator;
+import com.mobsandgeeks.saripaar.annotation.Email;
+import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 
-public class LoginFragment extends Fragment {
+import java.util.List;
+
+public class LoginFragment extends Fragment implements Validator.ValidationListener {
 
     private ILoginPresenter mLoginPresenter;
+    @NotEmpty
+    @Email
     private TextInputEditText mLoginEmail;
+    @NotEmpty
     private TextInputEditText mLoginPassword;
     private FloatingActionButton mLoginButton;
     private TextView mSignUpButton;
     private ProgressBar mLoginProgressbar;
+
+    private Validator validator;
 
     private static LoginFragment intstance;
 
@@ -39,6 +51,8 @@ public class LoginFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mLoginPresenter = LoginPresenter.getInstance();
+        validator = new Validator(this);
+        validator.setValidationListener(this);
 
 
     }
@@ -63,7 +77,7 @@ public class LoginFragment extends Fragment {
             mLoginPresenter.init(getActivity(),mLoginProgressbar,mLoginButton);
 
         mLoginButton.setOnClickListener(e->{
-           mLoginPresenter.signIn(mLoginEmail.getText().toString().toLowerCase(),mLoginPassword.getText().toString());
+            validator.validate();
         });
 
         mSignUpButton.setOnClickListener(e->{
@@ -79,5 +93,26 @@ public class LoginFragment extends Fragment {
                 .replace(R.id.main_layout,fragment,fragment.toString())
                 .setTransition(FragmentTransaction.TRANSIT_ENTER_MASK)
                 .commit();
+    }
+
+    @Override
+    public void onValidationSucceeded() {
+        mLoginPresenter.signIn(mLoginEmail.getText().toString().toLowerCase(),mLoginPassword.getText().toString());
+
+    }
+
+    @Override
+    public void onValidationFailed(List<ValidationError> errors) {
+        for (ValidationError error : errors) {
+            View view = error.getView();
+            String message = error.getCollatedErrorMessage(getActivity().getApplicationContext());
+
+            // Display error messages ;)
+            if (view instanceof TextInputEditText) {
+                ((TextInputEditText) view).setError(message);
+            } else {
+                Toast.makeText(getActivity().getApplicationContext(), message, Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }
