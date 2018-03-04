@@ -7,19 +7,31 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Spinner;
+
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.model.User;
 import com.drivewell.drivewell.ui.auth.login.LoginFragment;
 
 
 public class SignupFragment extends Fragment {
 
 
+    private ISignupPresenter signupPresenter;
     private static SignupFragment instance;
     private CardView mLoginBack;
+    private FloatingActionButton mSignup;
+
+    private TextInputEditText mEmail,mPassword,mConfirmPassword,mName,mAge,mHomeAddress,mContactNo;
+    private Spinner mUserType;
+
+    private String name,age,email,password,confirmPassword,homeAddress,contactNo,userType;
+
     public SignupFragment() {
         // Required empty public constructor
     }
@@ -36,6 +48,7 @@ public class SignupFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        signupPresenter=SignupPresenter.getInstance();
     }
 
     @Override
@@ -43,11 +56,54 @@ public class SignupFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
          View v= inflater.inflate(R.layout.fragment_signup, container, false);
+
+
+
          mLoginBack=v.findViewById(R.id.fabLoginBack);
+         mSignup=v.findViewById(R.id.fabSignupButton);
+
+         mEmail=v.findViewById(R.id.etSignUpEmailAddress);
+         mPassword=v.findViewById(R.id.etSignPassword);
+         mConfirmPassword=v.findViewById(R.id.etSignUpConfirmPassword);
+         mUserType=v.findViewById(R.id.spnrSignUpJobStatus);
+         mName=v.findViewById(R.id.etSignUpName);
+         mAge=v.findViewById(R.id.etSignUpAge);
+         mHomeAddress=v.findViewById(R.id.etSignUpHomeAddress);
+         mContactNo=v.findViewById(R.id.etContactNo);
+
+
+        signupPresenter.init(getActivity(),mLoginBack,
+                mSignup,
+                mEmail,
+                mPassword,
+                mConfirmPassword,
+                mUserType,
+                mName,
+                mAge,
+                mHomeAddress,
+                mContactNo);
+
+
+         mSignup.setOnClickListener(e->{
+
+             name=mName.getText().toString();
+             age=mAge.getText().toString();
+             homeAddress=mHomeAddress.getText().toString();
+             contactNo=mContactNo.getText().toString();
+             email=mEmail.getText().toString();
+             password=mPassword.getText().toString();
+             confirmPassword=mConfirmPassword.getText().toString();
+             //userType=mUserType.getSelectedItem().toString();
+
+             signupPresenter.signUp(new User(name,email,password,confirmPassword,homeAddress,contactNo,userType));
+
+         });
 
          mLoginBack.setOnClickListener(e->{
              loadFragment(LoginFragment.getIntstance());
          });
+
+
          return v;
     }
 

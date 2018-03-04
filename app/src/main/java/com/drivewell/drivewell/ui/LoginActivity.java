@@ -43,5 +43,11 @@ public class LoginActivity extends AppCompatActivity {
                 .commit();
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+            startActivities(new Intent[]{new Intent(this,LandingActivity.class)});
+        }
+    }
 }

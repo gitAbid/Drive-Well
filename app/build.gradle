@@ -41,6 +41,7 @@ dependencies {
 
     implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'ir.sohreco.circularpulsingbutton:circular-pulsing-button:1.1.1'
+    compile 'com.github.anastr:speedviewlib:1.1.7'
 
 
 
@@ -57,6 +58,7 @@ dependencies {
     implementation 'com.github.jd-alexander:library:1.1.0'
 
 }
+
 
 
 

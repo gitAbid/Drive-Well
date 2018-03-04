@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.ui.LandingActivity;
 import com.drivewell.drivewell.ui.MainActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -49,6 +50,8 @@ public class LoginPresenter implements ILoginPresenter {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         mLoginProgressbar.setVisibility(View.INVISIBLE);
+                        mLoginProgressbar.setBackgroundColor(activity.getResources().getColor(R.color.colorStatusGreen));
+                        activity.startActivities(new Intent[] {new Intent(activity.getApplicationContext(), LandingActivity.class)});
 
                     }
                 }).addOnFailureListener(activity,new OnFailureListener() {
@@ -61,7 +64,6 @@ public class LoginPresenter implements ILoginPresenter {
                     public void run() {
                         mLoginProgressbar.setVisibility(View.INVISIBLE);
                         mLoginButton.setVisibility(View.VISIBLE);
-                        activity.startActivities(new Intent[] {new Intent(activity.getApplicationContext(), MainActivity.class)});
                     }
                 }, 1000);
 

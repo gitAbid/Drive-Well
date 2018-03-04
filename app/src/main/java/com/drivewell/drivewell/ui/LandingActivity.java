@@ -7,12 +7,13 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.ui.dashboard.DashboardFragment;
 import com.drivewell.drivewell.ui.profile.ProfileFragment;
 import com.drivewell.drivewell.ui.roadcondition.RoadConditionMapFragment;
 import com.drivewell.drivewell.ui.workplace.WorkPlaceFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LandingActivity extends AppCompatActivity {
 
@@ -25,13 +26,16 @@ public class LandingActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    loadFragment(ProfileFragment.newInstance());
+                    loadFragment(DashboardFragment.newInstance());
                     return true;
-                case R.id.navigation_dashboard:
+                case R.id.navigation_roadcondition:
                     loadFragment(RoadConditionMapFragment.newInstance());
                     return true;
-                case R.id.navigation_notifications:
+                case R.id.navigation_workplace:
                     loadFragment(WorkPlaceFragment.newInstance());
+                    return true;
+                case R.id.navigation_profile:
+                    loadFragment(ProfileFragment.newInstance());
                     return true;
             }
             return false;
@@ -55,4 +59,11 @@ public class LandingActivity extends AppCompatActivity {
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+
+
 }
