@@ -53,6 +53,10 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
     private TextInputEditText mHomeAddress;
     @NotEmpty
     private TextInputEditText mContactNo;
+<<<<<<< HEAD
+=======
+    @NotEmpty
+>>>>>>> driverRankingFeature
     private Spinner mUserType;
 
     private String name, age, email, password, confirmPassword, homeAddress, contactNo, userType;
