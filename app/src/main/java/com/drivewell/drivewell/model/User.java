@@ -5,7 +5,9 @@ package com.drivewell.drivewell.model;
  */
 
 public class User {
+    private String userId;
     private String name;
+    private String age;
     private String email;
     private String password;
     private String confirmPassword;
@@ -14,9 +16,23 @@ public class User {
     private String userType;
 
 
+    public String getAge() {
+        return age;
+    }
 
+    public void setAge(String age) {
+        this.age = age;
+    }
 
     public User() {
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -89,8 +105,10 @@ public class User {
     }
 
 
-    public User(String name, String email, String password, String confirmPassword, String homeAddress, String contactNo, String userType) {
+    public User(String userId, String name, String age, String email, String password, String confirmPassword, String homeAddress, String contactNo, String userType) {
+        this.userId = userId;
         this.name = name;
+        this.age = age;
         this.email = email;
         this.password = password;
         this.confirmPassword = confirmPassword;

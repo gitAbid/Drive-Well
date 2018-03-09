@@ -14,6 +14,7 @@ import android.util.Log;
 
 import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.ui.auth.login.LoginFragment;
+import com.drivewell.drivewell.utils.SetupApplication;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -47,6 +48,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+            SetupApplication.Initialize();
             startActivities(new Intent[]{new Intent(this,LandingActivity.class)});
         }
     }

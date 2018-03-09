@@ -43,7 +43,8 @@
                             android:cursorVisible="true"
                             android:fontFamily="@font/roboto_thin"
                             android:hint="Email Address"
-                            android:inputType="textEmailAddress|textAutoComplete" />
+                            android:inputType="textEmailAddress|textAutoComplete"
+                            android:text="abid@abid.com" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
@@ -60,7 +61,8 @@
                             android:cursorVisible="true"
                             android:fontFamily="@font/roboto_thin"
                             android:hint="Password"
-                            android:inputType="textVisiblePassword" />
+                            android:inputType="textPassword"
+                            android:text="abid104567" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
@@ -76,7 +78,8 @@
                             android:cursorVisible="true"
                             android:fontFamily="@font/roboto_thin"
                             android:hint="Confirm Password"
-                            android:inputType="textVisiblePassword" />
+                            android:inputType="textPassword"
+                            android:text="abid104567" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
@@ -93,7 +96,8 @@
                             android:cursorVisible="true"
                             android:fontFamily="@font/roboto_thin"
                             android:hint="Name"
-                            android:inputType="text" />
+                            android:inputType="text"
+                            android:text="Abid Hasan" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
@@ -110,7 +114,8 @@
                             android:cursorVisible="true"
                             android:fontFamily="@font/roboto_thin"
                             android:hint="Age"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:text="23" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
@@ -127,7 +132,8 @@
                             android:cursorVisible="true"
                             android:fontFamily="@font/roboto_thin"
                             android:hint="Home Address"
-                            android:inputType="textImeMultiLine" />
+                            android:inputType="textImeMultiLine"
+                            android:text="Dhaka 1215" />
                     </android.support.design.widget.TextInputLayout>
 
                     <android.support.design.widget.TextInputLayout
@@ -144,7 +150,8 @@
                             android:cursorVisible="true"
                             android:fontFamily="@font/roboto_thin"
                             android:hint="Contact No"
-                            android:inputType="phone" />
+                            android:inputType="phone"
+                            android:text="01674530458" />
                     </android.support.design.widget.TextInputLayout>
 
                     <TextView

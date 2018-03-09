@@ -18,9 +18,9 @@ import android.widget.Toast;
 import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.model.User;
 import com.drivewell.drivewell.ui.auth.login.LoginFragment;
+import com.google.firebase.auth.FirebaseAuth;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
-import com.mobsandgeeks.saripaar.annotation.ConfirmEmail;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
@@ -41,7 +41,7 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
     @Email
     private TextInputEditText mEmail;
     @NotEmpty
-    @Password(min = 6, scheme = Password.Scheme.ALPHA_NUMERIC_MIXED_CASE_SYMBOLS)
+    @Password(min = 6)
     private TextInputEditText mPassword;
     @ConfirmPassword
     private TextInputEditText mConfirmPassword;
@@ -55,7 +55,7 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
     private TextInputEditText mContactNo;
     private Spinner mUserType;
 
-    private String name, age, email, password, confirmPassword, homeAddress, contactNo, userType;
+    private String name, age, email, password, confirmPassword, homeAddress, contactNo, userType="Client";
     private Validator validator;
 
     public SignupFragment() {
@@ -76,6 +76,7 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         signupPresenter = SignupPresenter.getInstance();
+        signupPresenter.init(getActivity());
         validator = new Validator(this);
         validator.setValidationListener(this);
     }
@@ -134,7 +135,7 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         confirmPassword = mConfirmPassword.getText().toString();
         //userType=mUserType.getSelectedItem().toString();
 
-        signupPresenter.signUp(new User(name, email, password, confirmPassword, homeAddress, contactNo, userType));
+        signupPresenter.signUp(new User(FirebaseAuth.getInstance().getUid(),name,age,email,password,confirmPassword,homeAddress,contactNo,userType));
 
 
     }

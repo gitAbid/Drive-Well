@@ -24,6 +24,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".datacollectionmodule.DataCollectionModule" />
         <activity android:name=".ui.LoginActivity"
+            android:windowSoftInputMode="adjustResize"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -11,6 +11,7 @@ import android.widget.ProgressBar;
 import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.ui.LandingActivity;
 import com.drivewell.drivewell.ui.MainActivity;
+import com.drivewell.drivewell.utils.SetupApplication;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.AuthResult;
@@ -51,6 +52,7 @@ public class LoginPresenter implements ILoginPresenter {
                     public void onSuccess(AuthResult authResult) {
                         mLoginProgressbar.setVisibility(View.INVISIBLE);
                         mLoginProgressbar.setBackgroundColor(activity.getResources().getColor(R.color.colorStatusGreen));
+                        SetupApplication.Initialize();
                         activity.startActivities(new Intent[] {new Intent(activity.getApplicationContext(), LandingActivity.class)});
 
                     }

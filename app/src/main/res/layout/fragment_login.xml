@@ -51,7 +51,7 @@
                     android:cursorVisible="true"
                     android:fontFamily="@font/roboto_thin"
                     android:hint="Password"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
             <TextView
