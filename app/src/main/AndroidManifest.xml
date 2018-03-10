@@ -9,7 +9,9 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
@@ -24,8 +26,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".datacollectionmodule.DataCollectionModule" />
         <activity android:name=".ui.LoginActivity"
-            android:windowSoftInputMode="adjustResize"
-            android:noHistory="true">
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

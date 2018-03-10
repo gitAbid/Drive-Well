@@ -2,13 +2,20 @@ package com.drivewell.drivewell.ui.auth.signup;
 
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
 
+import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.widget.CardView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.constants.Signup;
 import com.drivewell.drivewell.model.User;
 import com.drivewell.drivewell.ui.auth.login.LoginFragment;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,8 +33,19 @@ import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
 import com.mobsandgeeks.saripaar.annotation.Email;
 import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
+import br.com.packapps.retropicker.callback.CallbackPicker;
+import br.com.packapps.retropicker.config.Retropicker;
+import de.hdodenhof.circleimageview.CircleImageView;
+import me.iwf.photopicker.PhotoPicker;
+
+import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.RESULT_OK;
+import static com.drivewell.drivewell.constants.Signup.PICK_IMAGE_REQUEST;
 
 
 public class SignupFragment extends Fragment implements Validator.ValidationListener {
@@ -58,8 +77,16 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
     private String name, age, email, password, confirmPassword, homeAddress, contactNo, userType="Client";
     private Validator validator;
 
+    private CircleImageView mProfile;
+    private Uri filePath;
+    private String profileImageUrl="";
+    private User user;
+    Retropicker retropicker;
+
+
     public SignupFragment() {
         // Required empty public constructor
+        user=new User();
     }
 
     public static SignupFragment newInstance() {
@@ -90,7 +117,6 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
 
         mLoginBack = v.findViewById(R.id.fabLoginBack);
         mSignup = v.findViewById(R.id.fabSignupButton);
-
         mEmail = v.findViewById(R.id.etSignUpEmailAddress);
         mPassword = v.findViewById(R.id.etSignPassword);
         mConfirmPassword = v.findViewById(R.id.etSignUpConfirmPassword);
@@ -99,6 +125,32 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         mAge = v.findViewById(R.id.etSignUpAge);
         mHomeAddress = v.findViewById(R.id.etSignUpHomeAddress);
         mContactNo = v.findViewById(R.id.etContactNo);
+
+        mProfile=v.findViewById(R.id.civSignUpProfilePicture);
+
+        mProfile.setOnClickListener((View e) ->{
+            Retropicker.Builder builder =  new Retropicker.Builder(getActivity())
+                    .setTypeAction(Retropicker.GALLERY_PICKER) //Para abrir a galeria passe Retropicker.GALLERY_PICKER
+                    .setImageName("profile_image.jpg") //Opicional
+                    .checkPermission(true);
+
+            builder.enquee(new CallbackPicker() {
+                @Override
+                public void onSuccess(Bitmap bitmap, String imagePath) {
+                    signupPresenter.uploadProfilePicture(Uri.parse(imagePath)); //ImageView do seu aplicativo onde quer exibir a imagem final
+                }
+
+                @Override
+                public void onFailure(Throwable error) {
+                    Log.e("TAG", "error: " + error.getMessage());
+                    Log.e("TAG", "error toString: " + error.toString());
+                }
+            });
+
+
+            retropicker = builder.create();
+            retropicker.open();
+        });
 
 
         mSignup.setOnClickListener(e -> {
@@ -111,6 +163,13 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
 
 
         return v;
+    }
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        //Call this line fir manager RetroPicker Library
+        retropicker.onRequesPermissionResult(requestCode, permissions, grantResults);
+
     }
 
     @SuppressLint("WrongConstant")
@@ -135,7 +194,14 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         confirmPassword = mConfirmPassword.getText().toString();
         //userType=mUserType.getSelectedItem().toString();
 
-        signupPresenter.signUp(new User(FirebaseAuth.getInstance().getUid(),name,age,email,password,confirmPassword,homeAddress,contactNo,userType));
+        user.setName(name);
+        user.setAge(age);
+        user.setPassword(password);
+        user.setConfirmPassword(confirmPassword);
+        user.setContactNo(contactNo);
+        user.setEmail(email);
+        user.setHomeAddress(homeAddress);
+        signupPresenter.signUp(user);
 
 
     }
@@ -155,4 +221,13 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         }
     }
 
+
+
+    public void setProfilePicture(Uri profilePictureUrl){
+        user.setProfileImageUrl(profilePictureUrl.toString());
+        Picasso.get()
+                .load(profilePictureUrl)
+                .into(mProfile);
+
+    }
 }

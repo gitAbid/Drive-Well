@@ -36,6 +36,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore:11.8.0'
     implementation 'com.google.firebase:firebase-auth:11.8.0'
     implementation 'com.firebaseui:firebase-ui-auth:3.2.1'
+    implementation 'com.google.firebase:firebase-storage:11.8.0'
 
     implementation 'com.google.android.gms:play-services-maps:11.8.0'
     implementation 'com.google.android.gms:play-services-auth:11.8.0'
@@ -44,10 +45,18 @@ dependencies {
     implementation 'ir.sohreco.circularpulsingbutton:circular-pulsing-button:1.1.1'
     implementation 'com.github.anastr:speedviewlib:1.1.7'
     implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation 'com.github.bumptech.glide:glide:4.6.1'
+    implementation 'me.iwf.photopicker:PhotoPicker:0.9.12@aar'
+    implementation 'com.github.PauloLinhares09:RetroPicker:1.2.3-Beta1'
+
+
+
 
 
 
     implementation 'com.android.support:support-vector-drawable:26.1.0'
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
@@ -60,6 +69,7 @@ dependencies {
     implementation 'com.github.jd-alexander:library:1.1.0'
 
 }
+
 
 
 

@@ -14,7 +14,15 @@ public class User {
     private String homeAddress;
     private String contactNo;
     private String userType;
+    private String profileImageUrl;
 
+    public String getProfileImageUrl() {
+        return profileImageUrl;
+    }
+
+    public void setProfileImageUrl(String profileImageUrl) {
+        this.profileImageUrl = profileImageUrl;
+    }
 
     public String getAge() {
         return age;
@@ -105,7 +113,7 @@ public class User {
     }
 
 
-    public User(String userId, String name, String age, String email, String password, String confirmPassword, String homeAddress, String contactNo, String userType) {
+    public User(String userId, String name, String age, String email, String password, String confirmPassword, String homeAddress, String contactNo, String userType, String profileImageUrl) {
         this.userId = userId;
         this.name = name;
         this.age = age;
@@ -115,5 +123,6 @@ public class User {
         this.homeAddress = homeAddress;
         this.contactNo = contactNo;
         this.userType = userType;
+        this.profileImageUrl = profileImageUrl;
     }
 }

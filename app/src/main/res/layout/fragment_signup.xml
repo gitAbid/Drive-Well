@@ -185,7 +185,7 @@
                 app:cardElevation="2dp">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/civLoginProfilePicture"
+                    android:id="@+id/civSignUpProfilePicture"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:src="@drawable/profile"
