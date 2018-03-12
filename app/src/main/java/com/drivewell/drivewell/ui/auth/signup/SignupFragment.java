@@ -2,15 +2,11 @@ package com.drivewell.drivewell.ui.auth.signup;
 
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
-
-import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.TextInputEditText;
@@ -23,10 +19,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.drivewell.drivewell.R;
-import com.drivewell.drivewell.constants.Signup;
 import com.drivewell.drivewell.model.User;
 import com.drivewell.drivewell.ui.auth.login.LoginFragment;
-import com.google.firebase.auth.FirebaseAuth;
 import com.mobsandgeeks.saripaar.ValidationError;
 import com.mobsandgeeks.saripaar.Validator;
 import com.mobsandgeeks.saripaar.annotation.ConfirmPassword;
@@ -35,17 +29,11 @@ import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import com.mobsandgeeks.saripaar.annotation.Password;
 import com.squareup.picasso.Picasso;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 import br.com.packapps.retropicker.callback.CallbackPicker;
 import br.com.packapps.retropicker.config.Retropicker;
 import de.hdodenhof.circleimageview.CircleImageView;
-import me.iwf.photopicker.PhotoPicker;
-
-import static android.support.v4.provider.FontsContractCompat.FontRequestCallback.RESULT_OK;
-import static com.drivewell.drivewell.constants.Signup.PICK_IMAGE_REQUEST;
 
 
 public class SignupFragment extends Fragment implements Validator.ValidationListener {

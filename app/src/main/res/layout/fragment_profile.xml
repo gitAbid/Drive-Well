@@ -177,6 +177,7 @@
                 android:id="@+id/tblProfileInformations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:elevation="0dp"
                 app:tabIndicatorColor="@color/colorStatusGreen"
                 app:tabTextColor="@color/colorStatusGreen">
 
