@@ -45,7 +45,6 @@ public class DashboardFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        PointerSpeedometer speedView=v.findViewById(R.id.svSpeed);
 
         Button signOut=v.findViewById(R.id.btSignOut);
 

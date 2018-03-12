@@ -5,16 +5,10 @@
     android:layout_height="match_parent"
     tools:context="com.drivewell.drivewell.ui.dashboard.DashboardFragment">
 
-    <com.github.anastr.speedviewlib.PointerSpeedometer
-        android:id="@+id/svSpeed"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:sv_maxSpeed="450" />
-
 
     <Button
         android:id="@+id/btSignOut"
-        android:layout_gravity="top|right"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:text="Signout"
         android:layout_height="wrap_content" />
