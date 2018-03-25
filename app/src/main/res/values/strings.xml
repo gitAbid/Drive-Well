@@ -14,4 +14,12 @@
     <string name="title_home">Profile</string>
     <string name="title_dashboard">Road</string>
     <string name="title_notifications">Workplace</string>
+
+
+    <string name="category_prompt">Choose User Type</string>
+
+    <string-array name="user_type">
+        <item>Driver</item>
+        <item>Client</item>
+    </string-array>
 </resources>

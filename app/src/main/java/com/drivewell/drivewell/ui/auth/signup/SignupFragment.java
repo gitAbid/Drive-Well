@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -71,6 +72,7 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
     private User user;
     Retropicker retropicker;
 
+    ProgressBar progressBar;
 
     public SignupFragment() {
         // Required empty public constructor
@@ -113,6 +115,9 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         mAge = v.findViewById(R.id.etSignUpAge);
         mHomeAddress = v.findViewById(R.id.etSignUpHomeAddress);
         mContactNo = v.findViewById(R.id.etContactNo);
+        mUserType=v.findViewById(R.id.spnrSignUpJobStatus);
+        progressBar=v.findViewById(R.id.pbSignupLoading);
+
 
         mProfile=v.findViewById(R.id.civSignUpProfilePicture);
 
@@ -125,6 +130,8 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
             builder.enquee(new CallbackPicker() {
                 @Override
                 public void onSuccess(Bitmap bitmap, String imagePath) {
+                    mProfile.setVisibility(View.INVISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
                     signupPresenter.uploadProfilePicture(Uri.parse(imagePath)); //ImageView do seu aplicativo onde quer exibir a imagem final
                 }
 
@@ -180,7 +187,7 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         email = mEmail.getText().toString();
         password = mPassword.getText().toString();
         confirmPassword = mConfirmPassword.getText().toString();
-        //userType=mUserType.getSelectedItem().toString();
+        userType=mUserType.getSelectedItem().toString();
 
         user.setName(name);
         user.setAge(age);
@@ -189,6 +196,7 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         user.setContactNo(contactNo);
         user.setEmail(email);
         user.setHomeAddress(homeAddress);
+        user.setUserType(userType);
         signupPresenter.signUp(user);
 
 
@@ -216,6 +224,9 @@ public class SignupFragment extends Fragment implements Validator.ValidationList
         Picasso.get()
                 .load(profilePictureUrl)
                 .into(mProfile);
+
+        mProfile.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.INVISIBLE);
 
     }
 }

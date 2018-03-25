@@ -5,11 +5,18 @@
     android:layout_height="match_parent"
     tools:context="com.drivewell.drivewell.ui.profile.information.AboutFragment">
 
+    <ProgressBar
+        android:id="@+id/pbAboutLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
     <LinearLayout
+        android:id="@+id/llAboutSection"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -33,6 +40,7 @@
                 android:background="@color/colorStatusGreen" />
 
             <TextView
+                android:id="@+id/tvAboutEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -63,6 +71,7 @@
                 android:background="@color/colorStatusGreen" />
 
             <TextView
+                android:id="@+id/tvAboutAge"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -95,6 +104,7 @@
                 android:background="@color/colorStatusGreen" />
 
             <TextView
+                android:id="@+id/tvAboutPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -126,6 +136,7 @@
                 android:background="@color/colorStatusGreen" />
 
             <TextView
+                android:id="@+id/tvAboutAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -156,6 +167,7 @@
                 android:background="@color/colorStatusGreen" />
 
             <TextView
+                android:id="@+id/tvAboutExperience"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -186,6 +198,7 @@
                 android:background="@color/colorStatusGreen" />
 
             <TextView
+                android:id="@+id/tvAboutUserType"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

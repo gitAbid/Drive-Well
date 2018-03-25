@@ -8,7 +8,7 @@ import android.view.View;
  */
 
 public interface IProfilePresenter {
-    void init(View view, Activity activity);
+    void init(View view, View v, Activity activity);
     void setupProfile();
 
 

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.drivewell.drivewell.R;
 import com.drivewell.drivewell.ui.dashboard.DashboardFragment;
@@ -58,6 +59,12 @@ public class LandingActivity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.flContainer,fragment,fragment.toString());
         fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        onDestroy();
     }
 
     @Override

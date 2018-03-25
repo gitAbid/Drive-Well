@@ -169,6 +169,8 @@
                         android:layout_height="50dp"
                         android:layout_marginBottom="30dp"
                         android:layout_marginLeft="10dp"
+                        android:entries="@array/user_type"
+                        android:prompt="@string/category_prompt"
                         android:spinnerMode="dropdown"></Spinner>
 
 
@@ -184,6 +186,11 @@
                 app:cardCornerRadius="60dp"
                 app:cardElevation="2dp">
 
+                <ProgressBar
+                    android:id="@+id/pbSignupLoading"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
                 <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/civSignUpProfilePicture"
                     android:layout_width="match_parent"

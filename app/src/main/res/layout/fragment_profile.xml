@@ -5,7 +5,14 @@
     android:layout_height="match_parent"
     tools:context="com.drivewell.drivewell.ui.profile.ProfileFragment">
 
+    <ProgressBar
+        android:id="@+id/pbSignupLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/ProfileAppbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -201,6 +208,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"

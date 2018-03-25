@@ -118,7 +118,7 @@ public class Firestore implements IDatabase {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             usersList = task.getResult().toObjects(User.class);
-                            InitialInformation.user=usersList.get(0);
+                           /* InitialInformation.user=usersList.get(0);*/
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
