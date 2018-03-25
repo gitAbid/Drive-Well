@@ -6,4 +6,5 @@ package com.drivewell.drivewell.constants;
 
 public class FirebaseEndpoints {
     public static final String USERS="users";
+    public static final String JOBS="jobs";
 }
