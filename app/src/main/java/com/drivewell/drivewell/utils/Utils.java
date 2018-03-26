@@ -13,10 +13,6 @@ public class Utils {
     private static final int HOUR_MILLIS = 60 * MINUTE_MILLIS;
     private static final int DAY_MILLIS = 24 * HOUR_MILLIS;
 
-    public Utils() {
-    }
-
-
     public static String getTimeAgo(long time) {
         if (time < 1000000000000L) {
             // if timestamp given in seconds, convert to millis
