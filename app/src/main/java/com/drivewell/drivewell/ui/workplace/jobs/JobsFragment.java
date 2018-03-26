@@ -16,6 +16,7 @@ public class JobsFragment extends Fragment {
 
 
     private static JobsFragment instance;
+    IJobsPresenter jobsPresenter;
 
     public JobsFragment() {
         // Required empty public constructor
@@ -33,6 +34,7 @@ public class JobsFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        jobsPresenter=JobsPresenter.getInstance();
 
     }
 
@@ -41,6 +43,9 @@ public class JobsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v= inflater.inflate(R.layout.fragment_jobs, container, false);
+
+        jobsPresenter.init(v,getActivity());
+
 
         return v;
     }
