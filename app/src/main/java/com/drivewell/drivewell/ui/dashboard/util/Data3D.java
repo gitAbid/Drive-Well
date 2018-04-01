@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.coremodule.util;
+package com.drivewell.drivewell.ui.dashboard.util;
 public class Data3D {
     public long timestamp;
     public float f5x;

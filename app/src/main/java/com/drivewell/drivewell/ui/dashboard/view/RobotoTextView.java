@@ -1,9 +1,7 @@
-package com.drivewell.drivewell.coremodule.view;
+package com.drivewell.drivewell.ui.dashboard.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.graphics.Typeface;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 @SuppressLint("AppCompatCustomView")
 public class RobotoTextView extends android.support.v7.widget.AppCompatTextView {

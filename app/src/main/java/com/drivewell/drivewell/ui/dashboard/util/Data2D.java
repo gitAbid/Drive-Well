@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.coremodule.util;
+package com.drivewell.drivewell.ui.dashboard.util;
 
 public class Data2D {
     public float acc_brake;

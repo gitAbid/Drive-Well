@@ -5,12 +5,20 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <Button
+            android:id="@+id/btSignout"
+            android:layout_gravity="right"
+            android:text="Signout"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
-        <com.drivewell.drivewell.coremodule.view.GForceMeterView
+        <com.drivewell.drivewell.ui.dashboard.view.GForceMeterView
             android:id="@+id/g_force_view_meter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -21,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:layout_marginBottom="80dp"
+            android:layout_marginBottom="70dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -30,7 +38,7 @@
                 android:layout_weight="1"
                 android:orientation="horizontal">
 
-                <com.drivewell.drivewell.coremodule.view.RobotoTextView
+                <com.drivewell.drivewell.ui.dashboard.view.RobotoTextView
                     android:id="@+id/g_force_view_brake"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -39,7 +47,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp" />
 
-                <com.drivewell.drivewell.coremodule.view.RobotoTextView
+                <com.drivewell.drivewell.ui.dashboard.view.RobotoTextView
                     android:id="@+id/g_force_view_brake_acc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -48,7 +56,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp" />
 
-                <com.drivewell.drivewell.coremodule.view.RobotoTextView
+                <com.drivewell.drivewell.ui.dashboard.view.RobotoTextView
                     android:id="@+id/g_force_view_acc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -63,7 +71,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
-                <com.drivewell.drivewell.coremodule.view.RobotoTextView
+                <com.drivewell.drivewell.ui.dashboard.view.RobotoTextView
                     android:id="@+id/g_force_view_left"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -72,7 +80,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp" />
 
-                <com.drivewell.drivewell.coremodule.view.RobotoTextView
+                <com.drivewell.drivewell.ui.dashboard.view.RobotoTextView
                     android:id="@+id/g_force_view_left_right"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -81,7 +89,7 @@
                     android:textColor="#000000"
                     android:textSize="25dp" />
 
-                <com.drivewell.drivewell.coremodule.view.RobotoTextView
+                <com.drivewell.drivewell.ui.dashboard.view.RobotoTextView
                     android:id="@+id/g_force_view_right"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"

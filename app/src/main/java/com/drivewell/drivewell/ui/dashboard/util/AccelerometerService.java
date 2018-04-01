@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.coremodule.util;
+package com.drivewell.drivewell.ui.dashboard.util;
 
 import android.app.Service;
 import android.content.Context;

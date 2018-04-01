@@ -34,7 +34,7 @@
             </intent-filter>
         </activity>
 
-        <service android:name="com.drivewell.drivewell.coremodule.util.AccelerometerService" />
+        <service android:name=".ui.dashboard.util.AccelerometerService" />
         <activity
             android:name=".ui.LandingActivity"
             android:noHistory="true" />

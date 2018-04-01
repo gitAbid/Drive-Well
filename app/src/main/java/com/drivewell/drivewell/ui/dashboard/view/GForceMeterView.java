@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.coremodule.view;
+package com.drivewell.drivewell.ui.dashboard.view;
 
 import android.content.Context;
 import android.graphics.Canvas;
@@ -14,9 +14,9 @@ import android.util.Log;
 import android.view.View;
 
 
-import com.drivewell.drivewell.coremodule.util.Data2D;
-import com.drivewell.drivewell.coremodule.util.Data2DCache;
-import com.drivewell.drivewell.coremodule.util.SettingsWrapper;
+import com.drivewell.drivewell.ui.dashboard.util.Data2D;
+import com.drivewell.drivewell.ui.dashboard.util.Data2DCache;
+import com.drivewell.drivewell.ui.dashboard.util.SettingsWrapper;
 
 public class GForceMeterView extends View {
     private float acc_brake_g = 0.0f;

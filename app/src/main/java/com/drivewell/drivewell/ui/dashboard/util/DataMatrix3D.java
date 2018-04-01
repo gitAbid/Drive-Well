@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.coremodule.util;
+package com.drivewell.drivewell.ui.dashboard.util;
 
 public class DataMatrix3D {
     public final int COL_SIZE = 3;

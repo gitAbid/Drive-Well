@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.coremodule.util;
+package com.drivewell.drivewell.ui.dashboard.util;
 
 public class Data2DCache extends DataCache<Data2D> {
     public Data2DCache(int l) {

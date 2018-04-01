@@ -1,4 +1,4 @@
-package com.drivewell.drivewell.coremodule.util;
+package com.drivewell.drivewell.ui.dashboard.util;
 
 public class Data3DCache extends DataCache<Data3D> {
     public Data3DCache(int l) {

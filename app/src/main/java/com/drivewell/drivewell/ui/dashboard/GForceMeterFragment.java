@@ -1,18 +1,21 @@
-package com.drivewell.drivewell.coremodule;
+package com.drivewell.drivewell.ui.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.drivewell.drivewell.R;
-import com.drivewell.drivewell.coremodule.util.Data2D;
-import com.drivewell.drivewell.coremodule.util.SettingsWrapper;
-import com.drivewell.drivewell.coremodule.view.GForceMeterView;
-import com.drivewell.drivewell.coremodule.view.RobotoTextView;
-
+import com.drivewell.drivewell.ui.LoginActivity;
+import com.drivewell.drivewell.ui.dashboard.util.Data2D;
+import com.drivewell.drivewell.ui.dashboard.util.SettingsWrapper;
+import com.drivewell.drivewell.ui.dashboard.view.GForceMeterView;
+import com.drivewell.drivewell.ui.dashboard.view.RobotoTextView;
+import com.google.firebase.auth.FirebaseAuth;
 
 
 public class GForceMeterFragment extends Fragment {
@@ -32,6 +35,9 @@ public class GForceMeterFragment extends Fragment {
     private RobotoTextView max_brake;
     private RobotoTextView max_left;
     private RobotoTextView max_right;
+
+
+    private Button mSignOut;
 
     public static GForceMeterFragment getInstance() {
         return instance==null?new GForceMeterFragment():instance;
@@ -54,6 +60,16 @@ public class GForceMeterFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         m_view = inflater.inflate(R.layout.fragment_gforce_meter, container, false);
+        mSignOut=m_view.findViewById(R.id.btSignout);
+
+        mSignOut.setOnClickListener(e->{
+            if (FirebaseAuth.getInstance().getCurrentUser()!=null){
+                FirebaseAuth.getInstance().signOut();
+                Intent intent=new Intent(getActivity(), LoginActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
+            }
+        });
         initializeViews(m_view);
         this.is_fragment_ready = true;
         return m_view;
