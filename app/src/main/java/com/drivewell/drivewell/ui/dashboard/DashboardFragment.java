@@ -1,6 +1,7 @@
 package com.drivewell.drivewell.ui.dashboard;
 
 
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,8 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.coremodule.GForceMeterFragment;
 import com.drivewell.drivewell.ui.LoginActivity;
-import com.github.anastr.speedviewlib.AwesomeSpeedometer;
-import com.github.anastr.speedviewlib.PointerSpeedometer;
-import com.github.anastr.speedviewlib.SpeedView;
 import com.google.firebase.auth.FirebaseAuth;
 
 
@@ -46,6 +45,8 @@ public class DashboardFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
 
+       /* loadFragment(GForceMeterFragment.getInstance());*/
+
         Button signOut=v.findViewById(R.id.btSignOut);
 
         signOut.setOnClickListener(e->{
@@ -53,6 +54,14 @@ public class DashboardFragment extends Fragment {
             startActivity(new Intent(getActivity(), LoginActivity.class));
         });
         return v;
+    }
+
+    private void loadFragment(Fragment fragment) {
+        getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.dashboardContainer,fragment,fragment.toString())
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
+                .commit();
     }
 
 
