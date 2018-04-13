@@ -42,4 +42,9 @@ public class Utils {
             return diff / DAY_MILLIS + " days ago";
         }
     }
+
+    public static double round(double v, double r){
+        double roundOff = Math.round(v * r) /r;
+        return roundOff;
+    }
 }

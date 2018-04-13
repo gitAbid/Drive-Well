@@ -5,11 +5,13 @@ import android.app.FragmentManager;
 import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -18,6 +20,9 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.drivewell.drivewell.R;
+import com.drivewell.drivewell.adapter.AdapterRankingLeaderBoard;
+import com.drivewell.drivewell.constants.Ranking;
+import com.drivewell.drivewell.coremodule.EvaluationModule;
 import com.drivewell.drivewell.ui.dashboard.GForceMeterFragment;
 import com.drivewell.drivewell.ui.dashboard.util.AccelerometerService;
 import com.drivewell.drivewell.ui.dashboard.util.Data2D;
@@ -28,8 +33,11 @@ import com.drivewell.drivewell.ui.dashboard.util.SettingsWrapper;
 import com.drivewell.drivewell.ui.profile.ProfileFragment;
 import com.drivewell.drivewell.ui.roadcondition.RoadConditionMapFragment;
 import com.drivewell.drivewell.ui.workplace.WorkPlaceFragment;
+import com.drivewell.drivewell.utils.Utils;
 
 import java.lang.ref.WeakReference;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class LandingActivity extends AppCompatActivity implements GForceMeterFragment.ActionHandler {
 
@@ -42,8 +50,11 @@ public class LandingActivity extends AppCompatActivity implements GForceMeterFra
     private GProcessorHandler g_processor_handler;
     private long last_refresh_timestamp = -1;
     private long last_sample_timestamp = -1;
-    static Data2D processed_data;
+    static Data2D currentData;
+    private Data2D previousData;
+    Timer timer;
 
+    private EvaluationModule evaluationModule;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -80,12 +91,15 @@ public class LandingActivity extends AppCompatActivity implements GForceMeterFra
         navigation.setSelectedItemId(R.id.navigation_home);
 
 
+        evaluationModule=EvaluationModule.getInstance();
+
         initializeSettings();
         initializeViewVariables();
         initializeViews();
 
         initializeData();
         initializeSensor();
+
 
 
 
@@ -116,6 +130,7 @@ public class LandingActivity extends AppCompatActivity implements GForceMeterFra
 
     private void initializeData() {
         DataRecorder.initialize(this);
+
     }
 
     private void initializeViewVariables() {
@@ -141,6 +156,31 @@ public class LandingActivity extends AppCompatActivity implements GForceMeterFra
         bindService(new Intent(this, AccelerometerService.class), this.acc_service_connection, 1);
         this.g_processor_handler = new GProcessorHandler(this);
         this.g_processor = new GProcessor(this.g_processor_handler);
+
+        timer=new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+
+                try {
+                    runOnUiThread(new Runnable() {
+                        @RequiresApi(api = Build.VERSION_CODES.N)
+                        @Override
+                        public void run() {
+                            if (previousData==null){
+                                previousData=currentData;
+                            }else if (Utils.round(previousData.right_left,100)==(Utils.round(currentData.right_left,100))|| Utils.round(previousData.acc_brake,100)==(Utils.round(currentData.acc_brake,100))){
+                                previousData=currentData;
+                            }else {
+                                g_force_fragment.setPoints(String.valueOf(evaluationModule.calculatePoints(currentData)));
+                                previousData=currentData;
+                            }}
+                    });
+                }catch (Exception e){
+
+                }
+            }
+        }, 0, 500);
     }
 
 
@@ -168,8 +208,13 @@ public class LandingActivity extends AppCompatActivity implements GForceMeterFra
                     ((LandingActivity) this.m_ref.get()).last_refresh_timestamp = data.timestamp;
                     if (((LandingActivity) this.m_ref.get()).g_force_fragment != null) {
                         Data2D processed_data = ((LandingActivity) this.m_ref.get()).g_processor.getProcessedData();
+                        currentData=processed_data;
                         if (processed_data != null) {
-                            ((LandingActivity) this.m_ref.get()).g_force_fragment.processData(processed_data);
+                            try {
+                                ((LandingActivity) this.m_ref.get()).g_force_fragment.processData(processed_data);
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                             if (((LandingActivity) this.m_ref.get()).last_sample_timestamp < 0) {
                                 ((LandingActivity) this.m_ref.get()).last_sample_timestamp = data.timestamp;
                             } else if (Data3D.Ns2S(data.timestamp - ((LandingActivity) this.m_ref.get()).last_sample_timestamp) > ((double) (1.0f / SettingsWrapper.SENSOR_SAMPLE_RATE))) {

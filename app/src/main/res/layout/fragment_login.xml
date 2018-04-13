@@ -102,9 +102,9 @@
     <android.support.v7.widget.CardView
         android:id="@+id/civ"
         android:layout_centerHorizontal="true"
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        app:cardCornerRadius="60dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        app:cardCornerRadius="45dp"
         app:cardElevation="2dp">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/civLoginProfilePicture"
@@ -112,18 +112,18 @@
             app:civ_border_color="@color/colorStatusGreen"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/profile"/>
+            android:src="@drawable/drivewell_logo"/>
     </android.support.v7.widget.CardView>
     <android.support.v7.widget.CardView
         android:animateLayoutChanges="true"
-        app:cardCornerRadius="35dp"
+        app:cardCornerRadius="25dp"
         app:cardElevation="3dp"
         android:background="@color/fui_transparent"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="345dp"
         android:layout_below="@id/civ"
-        android:layout_width="70dp"
-        android:layout_height="70dp">
+        android:layout_width="50dp"
+        android:layout_height="50dp">
         <ProgressBar
             android:padding="10dp"
             android:id="@+id/pbLoginProgress"

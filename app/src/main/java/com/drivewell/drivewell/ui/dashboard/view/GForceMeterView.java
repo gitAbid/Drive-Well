@@ -43,7 +43,7 @@ public class GForceMeterView extends View {
     private final float radius_divider = 24.0f;
     private float range_g = (this.max_g - this.min_g);
     private float right_left_g = 0.0f;
-    private final int stroke_color = Color.rgb(0, 255, 0);
+    private final int stroke_color = Color.rgb(0, 20, 40);
     private final float text_divider = 35.0f;
     public int trace_length = 1000;
     private int width;

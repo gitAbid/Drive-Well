@@ -1,6 +1,7 @@
 package com.drivewell.drivewell.ui.dashboard.view;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 
 @SuppressLint("AppCompatCustomView")
@@ -26,6 +27,6 @@ public class RobotoTextView extends android.support.v7.widget.AppCompatTextView 
     }
 
     private void init() {
-     //   setTypeface(Typeface.createFromAsset(this.m_context.getAssets(), "fonts/roboto.ttf"));
+        setTypeface(Typeface.createFromAsset(this.m_context.getAssets(), "fonts/roboto.ttf"));
     }
 }

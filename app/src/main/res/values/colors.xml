@@ -6,4 +6,5 @@
     <color name="colorStatusGreen">#00e676</color>
     <color name="colorStatusRed">#d50000</color>
     <color name="colorBackground">#e1dcdc</color>
+    <color name="colorDirectionDefault">#B2BEB5</color>
 </resources>
