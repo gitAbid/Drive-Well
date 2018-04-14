@@ -172,7 +172,11 @@ public class LandingActivity extends AppCompatActivity implements GForceMeterFra
                             }else if (Utils.round(previousData.right_left,100)==(Utils.round(currentData.right_left,100))|| Utils.round(previousData.acc_brake,100)==(Utils.round(currentData.acc_brake,100))){
                                 previousData=currentData;
                             }else {
-                                g_force_fragment.setPoints(String.valueOf(evaluationModule.calculatePoints(currentData)));
+                                evaluationModule.calculatePoints(currentData);
+                                g_force_fragment.setAccPoints(String.valueOf(evaluationModule.getAccPoints()));
+                                g_force_fragment.setBrakePoints(String.valueOf(evaluationModule.getBrakePoints()));
+                                g_force_fragment.setTurnPoints(String.valueOf(evaluationModule.getTurnPoints()));
+                                g_force_fragment.setPoints(String.valueOf(evaluationModule.getPOINTS()));
                                 previousData=currentData;
                             }}
                     });
