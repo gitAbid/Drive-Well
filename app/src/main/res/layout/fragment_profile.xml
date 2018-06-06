@@ -5,7 +5,14 @@
     android:layout_height="match_parent"
     tools:context="com.drivewell.drivewell.ui.profile.ProfileFragment">
 
+    <ProgressBar
+        android:id="@+id/pbSignupLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/ProfileAppbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -18,7 +25,7 @@
             android:fitsSystemWindows="true"
             app:contentScrim="@color/colorPrimary"
             app:expandedTitleTextAppearance="@android:color/transparent"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -32,80 +39,84 @@
                 android:layout_height="200dp"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
+                android:layout_marginLeft="@dimen/margin"
+                android:layout_marginRight="@dimen/margin"
                 android:alpha=".965"
                 app:layout_collapseMode="parallax">
 
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="match_parent"
-                   android:orientation="vertical">
-                   <TextView
-                       android:layout_weight="1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:layout_gravity="center_horizontal"
-                       android:layout_marginTop="70dp"
-                       android:text="Emma Watson"
-                       android:textSize="20sp"
-                       android:fontFamily="@font/roboto_thin" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
-                   <LinearLayout
-                       android:layout_weight="1"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:orientation="horizontal">
-                       <TextView
-                           android:padding="16dp"
-                           android:textAlignment="center"
-                           android:layout_weight="1"
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:fontFamily="@font/roboto_thin"
-                           android:text="2550 KM"
-                           android:textSize="18sp"/>
-                       <TextView
-                           android:padding="16dp"
-                           android:layout_weight="1"
-                           android:textAlignment="center"
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                           android:fontFamily="@font/roboto_thin"
-                           android:text="1500 Points"
-                           android:textSize="18sp"/>
-                   </LinearLayout>
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="70dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:text="Emma Watson"
+                        android:textSize="20sp" />
 
-                   <LinearLayout
-                       android:layout_weight="1"
-                       android:layout_width="match_parent"
-                       android:layout_height="wrap_content"
-                       android:layout_gravity="bottom"
-                       android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
 
-                       <Button
-                           style="@style/Widget.AppCompat.Button.Borderless"
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="bottom|left"
-                           android:layout_weight="1"
-                           android:fontFamily="@font/roboto_thin"
-                           android:gravity="center"
-                           android:text="Call Now"
-                           android:textColor="@color/colorStatusGreen" />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_thin"
+                            android:padding="16dp"
+                            android:text="2550 KM"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
 
-                       <Button
-                           style="@style/Widget.AppCompat.Button.Borderless"
-                           android:layout_width="match_parent"
-                           android:layout_height="wrap_content"
-                           android:layout_gravity="bottom|right"
-                           android:layout_weight="1"
-                           android:fontFamily="@font/roboto_thin"
-                           android:gravity="center"
-                           android:text="Message"
-                           android:textColor="@color/colorStatusGreen" />
-                   </LinearLayout>
-               </LinearLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_thin"
+                            android:padding="16dp"
+                            android:text="1500 Points"
+                            android:textAlignment="center"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <Button
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|left"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_thin"
+                            android:gravity="center"
+                            android:text="Call Now"
+                            android:textColor="@color/colorStatusGreen" />
+
+                        <Button
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|right"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/roboto_thin"
+                            android:gravity="center"
+                            android:text="Message"
+                            android:textColor="@color/colorStatusGreen" />
+                    </LinearLayout>
+                </LinearLayout>
 
 
             </android.support.v7.widget.CardView>
@@ -120,7 +131,7 @@
                 app:layout_collapseMode="parallax">
 
                 <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/civLeaderboardMemberBadge"
+                    android:id="@+id/civProfilePicture"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
@@ -163,14 +174,6 @@
             </android.support.v7.widget.CardView>
 
         </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
-
-    <android.support.v4.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:clipToPadding="true"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
@@ -178,11 +181,12 @@
             app:cardElevation="0dp">
 
             <android.support.design.widget.TabLayout
+                android:id="@+id/tblProfileInformations"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:tabTextColor="@color/colorStatusGreen"
+                app:elevation="0dp"
                 app:tabIndicatorColor="@color/colorStatusGreen"
-                >
+                app:tabTextColor="@color/colorStatusGreen">
 
                 <android.support.design.widget.TabItem
                     android:layout_width="wrap_content"
@@ -201,6 +205,21 @@
 
             </android.support.design.widget.TabLayout>
         </android.support.v7.widget.CardView>
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/nScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white"
+        android:clipToPadding="true"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/vpProfileInformations"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></android.support.v4.view.ViewPager>
     </android.support.v4.widget.NestedScrollView>
 
 

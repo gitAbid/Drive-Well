@@ -1,0 +1,679 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.drivewell.drivewell.ui.profile.information.HistoryFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="16dp">
+
+            <com.github.vipulasri.timelineview.TimelineView
+                android:id="@+id/time_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:line="@color/colorStatusGreen"
+                app:linePadding="5dp"
+                app:lineSize="2dp"
+                app:marker="@drawable/ic_location_on_black_24dp"
+                app:markerSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/locations"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Farmgate"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:paddingBottom="15sp"
+                    android:paddingLeft="40sp"
+                    android:text="Uttara"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="25sp"
+                android:layout_marginLeft="125sp"
+                android:layout_marginTop="40sp"
+                android:alpha=".2"
+                android:background="@color/colorStatusGreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120sp"
+                android:orientation="vertical"
+                android:paddingTop="10sp">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Distance \n 19.0 km in 45 min"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="16sp"
+                    android:alpha=".2"
+                    android:background="@color/colorStatusGreen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Points\n185"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Remark\nGood"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="16dp">
+
+            <com.github.vipulasri.timelineview.TimelineView
+                android:id="@+id/time_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:line="@color/colorStatusGreen"
+                app:linePadding="5dp"
+                app:lineSize="2dp"
+                app:marker="@drawable/ic_location_on_black_24dp"
+                app:markerSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/locations"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Farmgate"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:paddingBottom="15sp"
+                    android:paddingLeft="40sp"
+                    android:text="Uttara"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="25sp"
+                android:layout_marginLeft="125sp"
+                android:layout_marginTop="40sp"
+                android:alpha=".2"
+                android:background="@color/colorStatusGreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120sp"
+                android:orientation="vertical"
+                android:paddingTop="10sp">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Distance \n 19.0 km in 45 min"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="16sp"
+                    android:alpha=".2"
+                    android:background="@color/colorStatusGreen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Points\n185"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Remark\nGood"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="16dp">
+
+            <com.github.vipulasri.timelineview.TimelineView
+                android:id="@+id/time_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:line="@color/colorStatusGreen"
+                app:linePadding="5dp"
+                app:lineSize="2dp"
+                app:marker="@drawable/ic_location_on_black_24dp"
+                app:markerSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/locations"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Farmgate"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:paddingBottom="15sp"
+                    android:paddingLeft="40sp"
+                    android:text="Uttara"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="25sp"
+                android:layout_marginLeft="125sp"
+                android:layout_marginTop="40sp"
+                android:alpha=".2"
+                android:background="@color/colorStatusGreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120sp"
+                android:orientation="vertical"
+                android:paddingTop="10sp">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Distance \n 19.0 km in 45 min"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="16sp"
+                    android:alpha=".2"
+                    android:background="@color/colorStatusGreen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Points\n185"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Remark\nGood"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="16dp">
+
+            <com.github.vipulasri.timelineview.TimelineView
+                android:id="@+id/time_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:line="@color/colorStatusGreen"
+                app:linePadding="5dp"
+                app:lineSize="2dp"
+                app:marker="@drawable/ic_location_on_black_24dp"
+                app:markerSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/locations"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Farmgate"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:paddingBottom="15sp"
+                    android:paddingLeft="40sp"
+                    android:text="Uttara"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="25sp"
+                android:layout_marginLeft="125sp"
+                android:layout_marginTop="40sp"
+                android:alpha=".2"
+                android:background="@color/colorStatusGreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120sp"
+                android:orientation="vertical"
+                android:paddingTop="10sp">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Distance \n 19.0 km in 45 min"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="16sp"
+                    android:alpha=".2"
+                    android:background="@color/colorStatusGreen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Points\n185"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Remark\nGood"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="16dp">
+
+            <com.github.vipulasri.timelineview.TimelineView
+                android:id="@+id/time_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:line="@color/colorStatusGreen"
+                app:linePadding="5dp"
+                app:lineSize="2dp"
+                app:marker="@drawable/ic_location_on_black_24dp"
+                app:markerSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/locations"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Farmgate"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:paddingBottom="15sp"
+                    android:paddingLeft="40sp"
+                    android:text="Uttara"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="25sp"
+                android:layout_marginLeft="125sp"
+                android:layout_marginTop="40sp"
+                android:alpha=".2"
+                android:background="@color/colorStatusGreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120sp"
+                android:orientation="vertical"
+                android:paddingTop="10sp">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Distance \n 19.0 km in 45 min"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="16sp"
+                    android:alpha=".2"
+                    android:background="@color/colorStatusGreen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Points\n185"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Remark\nGood"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_marginLeft="@dimen/margin"
+            android:layout_marginRight="@dimen/margin"
+            android:layout_marginTop="16dp">
+
+            <com.github.vipulasri.timelineview.TimelineView
+                android:id="@+id/time_marker"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="16dp"
+                app:line="@color/colorStatusGreen"
+                app:linePadding="5dp"
+                app:lineSize="2dp"
+                app:marker="@drawable/ic_location_on_black_24dp"
+                app:markerSize="20dp" />
+
+            <LinearLayout
+                android:id="@+id/locations"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40sp"
+                    android:layout_marginTop="15dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Farmgate"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:paddingBottom="15sp"
+                    android:paddingLeft="40sp"
+                    android:text="Uttara"
+                    android:textSize="17sp"
+                    android:textStyle="bold|italic" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="25sp"
+                android:layout_marginLeft="125sp"
+                android:layout_marginTop="40sp"
+                android:alpha=".2"
+                android:background="@color/colorStatusGreen" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="120sp"
+                android:orientation="vertical"
+                android:paddingTop="10sp">
+
+                <TextView
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_thin"
+                    android:text="Distance \n 19.0 km in 45 min"
+                    android:textAlignment="center"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="16sp"
+                    android:layout_marginRight="16sp"
+                    android:alpha=".2"
+                    android:background="@color/colorStatusGreen" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Points\n185"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/roboto_thin"
+                        android:gravity="center"
+                        android:padding="5sp"
+                        android:text="Remark\nGood"
+                        android:textStyle="italic" />
+                </LinearLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

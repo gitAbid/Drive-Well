@@ -13,5 +13,5 @@ public interface ILoginPresenter {
     void init(Activity activity, ProgressBar progressBar, FloatingActionButton mLoginButton);
     void signIn(String email, String password);
     void signOut();
-
+    void getUserImage(String email);
 }

@@ -1,0 +1,230 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.drivewell.drivewell.ui.profile.information.AboutFragment">
+
+    <ProgressBar
+        android:id="@+id/pbAboutLoading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:id="@+id/llAboutSection"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:src="@drawable/fui_ic_mail_white_24dp"
+                android:tint="@color/colorStatusGreen" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorStatusGreen" />
+
+            <TextView
+                android:id="@+id/tvAboutEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_thin"
+                android:padding="10dp"
+                android:text="abid@northsouth.edu" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:tint="@color/colorStatusGreen"
+                app:srcCompat="@drawable/ic_person_black_24dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorStatusGreen" />
+
+            <TextView
+                android:id="@+id/tvAboutAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_thin"
+                android:padding="10dp"
+                android:text="23 Years" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:src="@drawable/fui_ic_phone_white_24dp"
+                android:tint="@color/colorStatusGreen" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorStatusGreen" />
+
+            <TextView
+                android:id="@+id/tvAboutPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_thin"
+                android:padding="10dp"
+                android:text="+8801674530458" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:tint="@color/colorStatusGreen"
+                app:srcCompat="@drawable/ic_home_black_24dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorStatusGreen" />
+
+            <TextView
+                android:id="@+id/tvAboutAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_thin"
+                android:padding="10dp"
+                android:text="Farmgate\nDhaka-1215, Bangladesh" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:tint="@color/colorStatusGreen"
+                app:srcCompat="@drawable/ic_time_to_leave_black_24dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorStatusGreen" />
+
+            <TextView
+                android:id="@+id/tvAboutExperience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_thin"
+                android:padding="10dp"
+                android:text="10 Years Experience" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="10dp"
+                android:tint="@color/colorStatusGreen"
+                app:srcCompat="@drawable/ic_verified_user_black_24dp" />
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/colorStatusGreen" />
+
+            <TextView
+                android:id="@+id/tvAboutUserType"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_thin"
+                android:padding="10dp"
+                android:text="Driver" />
+        </LinearLayout>
+
+<android.support.v7.widget.CardView
+    app:cardCornerRadius="25dp"
+    app:cardBackgroundColor="@color/colorStatusGreen"
+    android:layout_margin="25dp"
+    android:layout_gravity="center"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    style="@style/Widget.AppCompat.Button.Borderless">
+    <TextView
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:layout_gravity="center"
+        android:fontFamily="@font/roboto_thin"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Edit"/>
+</android.support.v7.widget.CardView>
+    </LinearLayout>
+</FrameLayout>
